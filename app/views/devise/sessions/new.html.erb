@@ -1,5 +1,5 @@
-<h2>Sign in</h2>
-
+<table><tr><td><h2>Login</h2></td></tr>
+  <tr> <td>
 <%= form_for(resource, :as => resource_name, :url => session_path(resource_name)) do |f| %>
   <div><%= f.label :email %><br />
   <%= f.email_field :email %></div>
@@ -13,6 +13,9 @@
 
   <div><%= f.submit "Sign in" %></div>
 <% end %>
-     <%= link_to "Login with Twitter", '/auth/twitter' %><br>
-        <%= link_to "Login with Facebook", '/auth/facebook' %><br>
-<%= render "devise/shared/links" %>
+    <p>Login with
+    <a href="/auth/twitter" title="Login with Twitter"><img src="../assets/twitter-icon.png" alt="Twitter" width="40px" height="40px"></a> or
+    <a href="/auth/facebook" title="Login with Facebook"><img src="../assets/facebook-icon.png" alt="Facebook" width="40px" height="40px"></a>
+    </p><%= render "devise/shared/links" %>
+  </td></tr>
+</table>

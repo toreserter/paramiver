@@ -10,13 +10,17 @@
   <% for authentication in @authentications %>
     <tr>
       <td><%= authentication.user_id %></td>
-      <td><%= authentication.provider %></td>
+      <td><% if authentication.provider == "twitter" %>
+            <img src="../assets/twitter-icon.png" alt="Twitter" width="40px" height="40px" title="Twitter">
+          <% elsif authentication.provider == "facebook" %>
+               <img src="../assets/facebook-icon.png" alt="Facebook" width="40px" height="40px" title="Facebook">
+        <% end %></td>
       <td><%= authentication.uid %></td>
 
       <td><%= link_to "Destroy", authentication, :confirm => 'Are you sure?', :method => :delete %></td>
     </tr>
   <% end %>
 </table>
-<%= link_to "Borclarim", credits_path %>
-<%= link_to "Twitter hesabı ekle", '/auth/twitter' %>
-<%= link_to "Facebook hesabı ekle", '/auth/facebook' %>
+
+<%= link_to "Add a Twitter account", '/auth/twitter' %>
+<%= link_to "Add a Facebook account", '/auth/facebook' %>

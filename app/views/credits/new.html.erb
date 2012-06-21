@@ -1,4 +1,6 @@
-
-<%= render 'form' %>
-
+<% h = Friend.find(params[:friend_id]) %>
+<% if current_user.id.equal?(h.user_id)  %>
+    <h2><%= "New credit for " + h.name + "  " + h.surname %></h2>
+    <%= render 'form' %>
+<%end%>
 <%= link_to 'Back', credits_path %>
