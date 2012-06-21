@@ -53,15 +53,6 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="_links.erb" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/views/devise/shared/_links.erb">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="-0.0">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="credit.rb" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/models/credit.rb">
           <provider selected="true" editor-type-id="text-editor">
@@ -107,10 +98,19 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="index.html.erb" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="index.html.erb" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/views/authentications/index.html.erb">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="15" column="111" selection-start="519" selection-end="519" vertical-scroll-proportion="0.389948">
+            <state line="14" column="17" selection-start="365" selection-end="365" vertical-scroll-proportion="-8.75">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Gemfile" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/Gemfile">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="15" column="0" selection-start="228" selection-end="228" vertical-scroll-proportion="0.37437603">
               <folding />
             </state>
           </provider>
@@ -126,7 +126,6 @@
   <component name="IdeDocumentHistory">
     <option name="changedFiles">
       <list>
-        <option value="$PROJECT_DIR$/app/controllers/credits_controller.rb" />
         <option value="$PROJECT_DIR$/app/views/credits/show.html.erb" />
         <option value="$PROJECT_DIR$/app/views/friends/new.html.erb" />
         <option value="$PROJECT_DIR$/app/views/friends/_form.html.erb" />
@@ -142,6 +141,7 @@
         <option value="$PROJECT_DIR$/app/models/credit.rb" />
         <option value="$PROJECT_DIR$/app/views/friends/index.html.erb" />
         <option value="$PROJECT_DIR$/app/views/authentications/index.html.erb" />
+        <option value="$PROJECT_DIR$/Gemfile" />
       </list>
     </option>
   </component>
@@ -724,13 +724,6 @@
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/app/views/devise/unlocks/new.html.erb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/views/registrations/edit.html.erb">
       <provider selected="true" editor-type-id="text-editor">
         <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
@@ -831,7 +824,14 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/views/authentications/index.html.erb">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="15" column="111" selection-start="519" selection-end="519" vertical-scroll-proportion="0.389948">
+        <state line="14" column="17" selection-start="365" selection-end="365" vertical-scroll-proportion="-8.75">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Gemfile">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="15" column="0" selection-start="228" selection-end="228" vertical-scroll-proportion="0.37437603">
           <folding />
         </state>
       </provider>
