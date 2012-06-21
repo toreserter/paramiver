@@ -1,0 +1,17 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  friend_id: 1
+  miktar: 9.99
+  durum: MyString
+  not: MyText
+  ver_tarih: 2012-06-19 15:52:59
+  vade_tarih: 2012-06-19 15:52:59
+
+two:
+  friend_id: 1
+  miktar: 9.99
+  durum: MyString
+  not: MyText
+  ver_tarih: 2012-06-19 15:52:59
+  vade_tarih: 2012-06-19 15:52:59
