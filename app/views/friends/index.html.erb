@@ -1,0 +1,27 @@
+
+    <h2>My Friends</h2>
+    <table width="100%">
+      <thead>
+      <tr>
+        <th>Name</th>
+        <th>Surname</th>
+        <th>E-mail</th>
+        <th colspan="2">Actions</th>
+      </tr>
+      </thead>
+
+      <tbody>
+      <% @friends.each do |friend| %>
+
+          <td><%= friend.name.upcase %></td>
+          <td><%= friend.surname.upcase %></td>
+          <td><%= friend.email %></td>
+          <td><p align="center"><%= link_to 'Credits', friend %></p></td>
+          <td><p align="center"> <%= link_to 'Edit Friend', edit_friend_path(friend) %></p></td>
+          <td><p align="center"> <%= link_to 'Add Credit', {:controller => "credits", :action => "new", :friend_id => friend.id} %></p></td>
+          </tr>
+      <%end%>
+      </tbody>
+    </table>
+    <br class="clear" />
+    <h3><%= link_to 'Add a Friend', new_friend_path %></h3>

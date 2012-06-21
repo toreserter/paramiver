@@ -1,7 +1,7 @@
 Paramiver::Application.routes.draw do
   match '/auth/:provider/callback' => 'authentications#create'
   resources :authentications
-
+  resources :friends
   resources :credits
   get "home/index"
   devise_for :users, :controllers => {:registrations => 'registrations'}

@@ -1,0 +1,36 @@
+
+    <%= form_for(@friend) do |f| %>
+        <% if @friend.errors.any? %>
+            <div id="error_explanation">
+              <h2><%= pluralize(@friend.errors.count, "error") %> prohibited this friend from being saved:</h2>
+
+              <ul>
+                <% @friend.errors.full_messages.each do |msg| %>
+                    <li><%= msg %></li>
+                <% end %>
+              </ul>
+            </div>
+        <% end %>
+        <div class="field">
+
+          <%= f.hidden_field :user_id ,:readonly=>'true' %>
+        </div>
+        <div class="field">
+          <%= f.label :Adi %><br />
+          <%= f.text_field :name %>
+        </div>
+        <div class="field">
+          <%= f.label :Surname %><br />
+          <%= f.text_field :surname %>
+        </div>
+        <div class="field">
+          <%= f.label :email %><br />
+          <%= f.text_field :email %>
+        </div>
+
+        <div class="actions">
+          <%= f.submit %>
+
+        </div>
+    <% end %>
+

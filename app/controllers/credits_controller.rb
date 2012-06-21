@@ -3,7 +3,10 @@ class CreditsController < ApplicationController
   # GET /credits
   # GET /credits.json
   def index
-    @credits = Credit.all
+    #@friend
+    @credits = Credit.find_all_by_friend_id(current_user.friends.all)
+
+
     respond_to do |format|
       format.html # index.html.erb
       format.json { render json: @credits }
@@ -13,8 +16,9 @@ class CreditsController < ApplicationController
   # GET /credits/1
   # GET /credits/1.json
   def show
-    @credit = Credit.find(params[:id])
-
+    #@credit = Credit.find_by_friend_id(current_user.friend)
+    @credit=Credit.find(params[:id])
+    @friend = Friend.find_by_id_and_user_id(params[:id],current_user.id)
     respond_to do |format|
       format.html # show.html.erb
       format.json { render json: @credit }
@@ -24,7 +28,7 @@ class CreditsController < ApplicationController
   # GET /credits/new
   # GET /credits/new.json
   def new
-    @credit = Credit.new
+    @credit = Credit.new(:friend_id => params[:friend_id])
     #@friend = Friend.find_by_id_and_user_id(@credit.friend_id,current_user.uid)
     respond_to do |format|
       format.html # new.html.erb
@@ -35,14 +39,14 @@ class CreditsController < ApplicationController
   # GET /credits/1/edit
   def edit
     @credit = Credit.find(params[:id])
-    @friend = Friend.find_by_id_and_user_id(@credit.friend_id,current_user.uid)
+    @friend = Friend.find_by_id_and_user_id(@credit.friend_id,current_user.id)
   end
 
   # POST /credits
   # POST /credits.json
   def create
     @credit = Credit.new(params[:credit])
-    @friend = Friend.find_by_id_and_user_id(@credit.friend_id,current_user.uid)
+    @friend = Friend.find_by_id_and_user_id(@credit.friend_id,current_user.id)
     respond_to do |format|
       if @credit.save
         format.html { redirect_to @credit, notice: 'Credit was successfully created.' }

@@ -1,13 +1,13 @@
-<h1>Listing credits</h1>
+<h2>Listing credits</h2>
 
-<table>
+<table width="100%">
   <tr>
     <th>Friend</th>
-    <th>Miktar</th>
-    <th>Durum</th>
-    <th>Not</th>
-    <th>Ver tarih</th>
-    <th>Vade tarih</th>
+    <th>Money</th>
+
+    <th>Note</th>
+    <th>Date</th>
+    <th>Expiration date</th>
     <th></th>
     <th></th>
     <th></th>
@@ -15,12 +15,12 @@
 
 <% @credits.each do |credit| %>
   <tr>
-    <td><%= credit.friend_id %></td>
+    <td><% @t = Friend.find(credit.friend_id) %><%= @t.name + " " + @t.surname %></td>
     <td><%= credit.miktar %></td>
-    <td><%= credit.durum %></td>
+
     <td><%= credit.not %></td>
-    <td><%= credit.ver_tarih %></td>
-    <td><%= credit.vade_tarih %></td>
+    <td><%= credit.ver_tarih.to_date %></td>
+    <td><%= credit.vade_tarih.to_date %></td>
     <td><%= link_to 'Show', credit %></td>
     <td><%= link_to 'Edit', edit_credit_path(credit) %></td>
     <td><%= link_to 'Destroy', credit, method: :delete, data: { confirm: 'Are you sure?' } %></td>
@@ -28,6 +28,4 @@
 <% end %>
 </table>
 
-<br />
 
-<%= link_to 'New Credit', new_credit_path %>

@@ -1,10 +1,24 @@
 body {
-  background-color: #fff;
+  background-color: #004753;
   color: #333;
   font-family: verdana, arial, helvetica, sans-serif;
   font-size: 13px;
-  line-height: 18px; }
+  line-height: 18px;
+}
 
+#layout {
+  margin:20px auto 20px auto;
+  width:990px;
+  border-radius: 5px;
+  border:2px solid #353535;
+  background-color: #FFFFFF;
+  padding: 20px;
+}
+
+.clear {
+  clear:both;
+
+}
 p, ol, ul, td {
   font-family: verdana, arial, helvetica, sans-serif;
   font-size: 13px;
@@ -54,3 +68,56 @@ div {
   ul li {
     font-size: 12px;
     list-style: square; } }
+#logo {
+  float: left;
+  width: 350px;
+  display: block;
+
+}
+
+#logo img{
+  float: left;
+  width:52px;
+  height: 52px;
+
+}
+#logo h1{
+  float:left;
+  font-size: 25px;
+  color: #616161;
+  margin: 15px 0 0 20px;
+  font-weight: 500;
+}
+#toptext {
+  float: right;
+  width: 575px;
+  text-align: right;
+  padding-top: 15px;
+  font-size: 13px;
+  color: #515151;
+
+
+}
+#topmenu {
+  margin: 15px 0 15px 0;
+  text-align: center;
+
+}
+#topmenu a{
+  font-size: 16px;
+  font-weight: bold;
+  padding: 0 25px 0 25px;
+  color: #004753;
+}
+table td{
+  padding:10px;
+  text-align: center;
+
+
+}
+table td{
+  border-bottom: 1px solid #dfdfdf;
+}
+table {
+  margin-top: 15px;
+}

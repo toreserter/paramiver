@@ -2,32 +2,28 @@
 
 <p>
   <b>Friend:</b>
-  <%= @credit.friend_id %>
+  <% g = Friend.find(@credit.friend_id) %>
+  <%= g.name + "  " + g.surname %>
 </p>
 
 <p>
-  <b>Miktar:</b>
+  <b>Money:</b>
   <%= @credit.miktar %>
 </p>
 
 <p>
-  <b>Durum:</b>
-  <%= @credit.durum %>
-</p>
-
-<p>
-  <b>Not:</b>
+  <b>Note:</b>
   <%= @credit.not %>
 </p>
 
 <p>
-  <b>Ver tarih:</b>
-  <%= @credit.ver_tarih %>
+  <b>Date:</b>
+  <%= @credit.ver_tarih.to_date %>
 </p>
 
 <p>
-  <b>Vade tarih:</b>
-  <%= @credit.vade_tarih %>
+  <b>Expiration date:</b>
+  <%= @credit.vade_tarih.to_date %>
 </p>
 
 

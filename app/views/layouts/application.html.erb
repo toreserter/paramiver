@@ -1,19 +1,43 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Paramiver</title>
+  <title>Paramı Ver</title>
   <%= stylesheet_link_tag    "application", :media => "all" %>
   <%= javascript_include_tag "application" %>
   <%= csrf_meta_tags %>
 </head>
 <body>
+<div id="layout">
+
+<div id="header">
+  <div id="logo">
+    <img src="../assets/coins-icon.png" alt="Logo">
+    <h1>Paramı Ver</h1>
+    <div class="clear"></div>
+  </div>
+
+  <div id="toptext">
 <% if user_signed_in? %>
     Signed in as <%= current_user.email %> . Not you?
-    <%=  link_to "Sign out", destroy_user_session_path, :method => :get %> <%= link_to "Hesabım", authentications_url %>
+    <%=  link_to "Sign out", destroy_user_session_path, :method => :get %> <br>
+        </div>
+        <div class="clear"></div>
+        <div id="topmenu">
+    <%= link_to "Credits", credits_path %>
+    <%= link_to "Friends", friends_path %>
+    <%= link_to "My Account", authentications_url %>
+        </div>
 <%else%>
     <%= link_to "Sign up", new_user_registration_path %>  or <%= link_to "Sign in", new_user_session_path %>
 <%end%>
+
+
+
+</div>
+
+
 <%= yield %>
 
+</div>
 </body>
 </html>

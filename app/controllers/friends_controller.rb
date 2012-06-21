@@ -1,13 +1,13 @@
 class FriendsController < ApplicationController
   # GET /friends
   # GET /friends.json
-  before_filter :login_required
+  before_filter :authenticate_user!
 
 
 
   def index
 
-    @friends = Friend.find_all_by_user_id(current_user.uid)
+    @friends = Friend.find_all_by_user_id(current_user.id)
 
     respond_to do |format|
       format.html # index.html.erb
@@ -21,7 +21,7 @@ class FriendsController < ApplicationController
 
 
     @credit=Credit.find_all_by_friend_id(params[:id])
-    @friend = Friend.find_by_id_and_user_id(params[:id],current_user.uid) #bugfix login olan herkes herkesin arkadasini goremez
+    @friend = Friend.find_by_id_and_user_id(params[:id],current_user.id) #bugfix login olan herkes herkesin arkadasini goremez
     respond_to do |format|
       format.html
       format.json { render :json => @friend }
@@ -34,7 +34,7 @@ class FriendsController < ApplicationController
   # GET /friends/new
   # GET /friends/new.json
   def new
-    @friend = Friend.new(:user_id =>current_user.uid)
+    @friend = Friend.new(:user_id =>current_user.id)
 
     respond_to do |format|
       format.html # new.html.erb
@@ -44,7 +44,7 @@ class FriendsController < ApplicationController
 
   # GET /friends/1/edit
   def edit
-    @friend = Friend.find_by_id_and_user_id(params[:id],current_user.uid)#busgfix login olan herkes herkesin arkadasini goremez
+    @friend = Friend.find_by_id_and_user_id(params[:id],current_user.id)#busgfix login olan herkes herkesin arkadasini goremez
   end
 
   # POST /friends
