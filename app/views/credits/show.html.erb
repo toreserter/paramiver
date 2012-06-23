@@ -29,3 +29,6 @@
 
 <%= link_to 'Edit', edit_credit_path(@credit) %> |
 <%= link_to 'Back', credits_path %>
+<%= link_to 'Share on Twitter', {:controller => "social",:action => "create", :tore => "twitter", :tweet => "#{g.name} #{g.surname} bana borcunu ödemiyor. Borcu #{@credit.miktar} TL oldu"} %>
+<%= link_to 'Share on Facebook', {:controller => "social",:action => "create", :tore => "facebook", :face => "#{g.name} #{g.surname} bana borcunu ödemiyor. Borcu #{@credit.miktar} TL oldu"} %>
+<a href="<%= create_path(:social =>  "#{g.name.upcase} #{g.surname.upcase}'n bana #{@credit.miktar} TL borcu var ve odemiyor :(" )%>">yigit</a>

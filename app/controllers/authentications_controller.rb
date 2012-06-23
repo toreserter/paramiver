@@ -10,12 +10,35 @@ class AuthenticationsController < ApplicationController
       flash[:notice] = "Kullanici giris yapti."
       sign_in_and_redirect(:user, authentication.user)
     elsif current_user     # daha önce farklı bir provider ile login olmuş. Yeni provider kaydını yapacağız.
-      current_user.authentications.create(:provider => auth['provider'], :uid => auth['uid'])
+      token = ""
+      token_secret = ""
+      if auth['provider'] == "facebook"
+        token = auth['credentials'].token
+      end
+      if auth['provider'] == "twitter"
+        token = auth['credentials'].token
+        token_secret = auth['credentials'].secret
+      end
+
+      current_user.authentications.create(:provider => auth['provider'], :uid => auth['uid'], :token => token, :token_secret => token_secret)
       flash[:notice] = "Basariyla giris yapildi."
       redirect_to authentications_url
     else    #eger signout durumunda ilk kez o account ile giris yapılıyorsa
       user = User.new
-      user.apply_oauth(auth)
+
+      token = ""
+      token_secret = ""
+
+      if auth['provider'] == "facebook"
+        token = auth['credentials'].token
+        user.email = auth['extra']['raw_info'].email
+      end
+      if auth['provider'] == "twitter"
+        token = auth['credentials'].token
+        token_secret = auth['credentials'].secret
+      end
+
+      user.authentications.build(:provider => auth['provider'], :uid => auth['uid'], :token => token, :token_secret => token_secret)
       if user.save
         flash[:notice] = "Kullanici giris yapti."
         sign_in_and_redirect(:user, user)

@@ -13,7 +13,8 @@ group :development, :test do
   gem 'sqlite3'
 end
 
-
+gem 'twitter'
+gem 'fb_graph'
 gem 'devise'
 gem 'nifty-generators'
 gem 'omniauth'

@@ -3,6 +3,9 @@ Paramiver::Application.routes.draw do
   resources :authentications
   resources :friends
   resources :credits
+  resources :social, :except => :index
+  match "/social" => "social#create", :as => :create
+
   get "home/index"
   devise_for :users, :controllers => {:registrations => 'registrations'}
   devise_for :users do
