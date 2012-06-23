@@ -14,13 +14,13 @@ group :development, :test do
 end
 
 gem 'twitter'
-gem 'fb_graph'
+gem 'fb_graph', '1.5.4'
 gem 'devise'
 gem 'nifty-generators'
 gem 'omniauth'
 gem 'omniauth-twitter'
 gem 'omniauth-facebook'
-
+gem 'mail', '2.4.4'
 # Gems used only for assets and not required
 # in production environments by default.
 group :assets do

@@ -1,4 +1,7 @@
 Paramiver::Application.routes.draw do
+
+  get "mailsender/create"
+
   match '/auth/:provider/callback' => 'authentications#create'
   resources :authentications
   resources :friends
