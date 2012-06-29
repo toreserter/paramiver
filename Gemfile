@@ -11,6 +11,7 @@ end
 
 group :development, :test do
   gem 'sqlite3'
+  gem 'rspec-rails'
 end
 
 gem 'twitter'
@@ -21,6 +22,17 @@ gem 'omniauth'
 gem 'omniauth-twitter'
 gem 'omniauth-facebook'
 gem 'mail', '2.4.4'
+gem 'simplecov', :require => false, :group => :test
+
+group :test do
+  gem 'factory_girl_rails'
+  gem 'cucumber-rails', require: false
+  gem 'shoulda-matchers'
+  gem 'capybara', :git => 'git://github.com/jnicklas/capybara.git'
+  gem 'launchy'
+  gem 'database_cleaner'
+  gem 'selenium-webdriver'
+end
 # Gems used only for assets and not required
 # in production environments by default.
 group :assets do
